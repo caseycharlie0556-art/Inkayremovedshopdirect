@@ -61,7 +61,7 @@ WUMS_USE_WUT_DEVOPTAB();
 #include <function_patcher/function_patching.h>
 #include "patches/account_settings.h"
 #include "patches/dns_hooks.h"
-#include "patches/eshop_applet.h"
+//#include "patches/eshop_applet.h"
 #include "patches/olv_applet.h"
 #include "patches/game_peertopeer.h"
 #include "sysconfig.h"
@@ -168,7 +168,7 @@ static void Inkay_Initialize(bool apply_patches, bool show_startup_toast, inkay_
 
     if (FunctionPatcher_InitLibrary() == FUNCTION_PATCHER_RESULT_SUCCESS) {
         patchDNS();
-        patchEshop();
+        //patchEshop();
         patchOlvApplet();
         patchAccountSettings();
         install_matchmaking_patches();
@@ -193,7 +193,7 @@ WUMS_INITIALIZE() {
 
 WUMS_DEINITIALIZE() {
     unpatchDNS();
-    unpatchEshop();
+    //unpatchEshop();
     unpatchOlvApplet();
     unpatchAccountSettings();
     remove_matchmaking_patches();
